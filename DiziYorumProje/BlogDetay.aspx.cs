@@ -8,22 +8,20 @@ using DiziYorumProje.Entity;
 
 namespace DiziYorumProje
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class BlogDetay : System.Web.UI.Page
     {
         BlogDiziEntities db = new BlogDiziEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var bloglar = db.TBLBLOG.ToList();
-            Repeater1.DataSource = bloglar;
+            int id =Convert.ToInt32(Request.QueryString["BLOGID"]);
+
+            var blog = db.TBLBLOG.Where(x=>x.BLOGID == id).ToList();
+            Repeater1.DataSource = blog;
             Repeater1.DataBind();
 
-            var bloglar2 = db.TBLKATEGORI.ToList();
-            Repeater2.DataSource = bloglar2;
+            var yorumlar = db.TBLYORUM.Where(x => x.YORUMBLOG == id).ToList();
+            Repeater2.DataSource = yorumlar;
             Repeater2.DataBind();
-
-            var bloglar3 = db.TBLBLOG.ToList();
-            Repeater3.DataSource = bloglar3;
-            Repeater3.DataBind();
         }
     }
 }
