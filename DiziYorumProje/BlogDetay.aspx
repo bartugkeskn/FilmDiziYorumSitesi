@@ -72,13 +72,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </ItemTemplate>
                     </asp:Repeater>
                     <div class="content-form">
-                        <h3>Yorum Yazın</h3>
-                        <form>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                            <input type="text" placeholder="Email" required />
-                            <input type="text" placeholder="Phone" required />
-                            <textarea placeholder="Message"></textarea>
-                            <input type="submit" value="SEND" />
+                        <h3>Bir yorum Yazın</h3>
+                        <form runat="server">
+                            <asp:TextBox ID="TextBox1" runat="server" placeholder="Kullanıcı Adınız" required=""></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" placeholder="Mail Adresiniz"></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" placeholder="Yorumunuz" TextMode="MultiLine" Height="100"></asp:TextBox>
+                            <asp:Button ID="Button1" runat="server" Text="Yorum Yap" OnClick="Button1_Click" />
                         </form>
                     </div>
                 </div>
