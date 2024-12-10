@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\www\source\repos\DiziYorumProje\DiziYorumProje\Entity\Model1.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\bartu\Source\Repos\FilmDiziYorumSitesi-With-Asp.net\DiziYorumProje\Entity\Model1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

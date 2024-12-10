@@ -8,12 +8,14 @@ using DiziYorumProje.Entity;
 
 namespace DiziYorumProje
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class KategoriDetay : System.Web.UI.Page
     {
         BlogDiziEntities db = new BlogDiziEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var bloglar = db.TBLBLOG.ToList();
+            int id = Convert.ToInt32(Request.QueryString["KATEGORIID"]);
+
+            var bloglar = db.TBLBLOG.Where(x => x.BLOGKATEGORI == id).ToList();
             Repeater1.DataSource = bloglar;
             Repeater1.DataBind();
 
@@ -21,13 +23,9 @@ namespace DiziYorumProje
             Repeater2.DataSource = bloglar2;
             Repeater2.DataBind();
 
-            var bloglar3 = db.TBLBLOG.ToList();
+            var bloglar3 = db.TBLBLOG.Take(3).OrderByDescending(x => x.BLOGID).ToList();
             Repeater3.DataSource = bloglar3;
             Repeater3.DataBind();
-
-            var bloglar4 = db.TBLYORUM.Take(3).ToList();
-            Repeater4.DataSource = bloglar4;
-            Repeater4.DataBind();
         }
     }
 }

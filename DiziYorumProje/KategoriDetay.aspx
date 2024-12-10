@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Kullanici.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DiziYorumProje.Default" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Kullanici.Master" AutoEventWireup="true" CodeBehind="KategoriDetay.aspx.cs" Inherits="DiziYorumProje.KategoriDetay" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container">
         <div class="content-grids">
             <div class="col-md-8 content-main">
@@ -32,21 +32,26 @@
                 </div>
                 <div class="comments">
                     <h3>Son Yapılan Yorumlar</h3>
-                    <asp:Repeater ID="Repeater4" runat="server">
-                        <ItemTemplate>
-                            <ul>
-                                <li><a href="#"><%# Eval("KULLANICIAD") %> - <%# Eval("YORUMICERIK") %></a></li>
-                            </ul>
-                        </ItemTemplate>
-                    </asp:Repeater>
+                    <ul>
+                        <li><a href="#">Amada Doe </a>on <a href="#">Hello World!</a></li>
+                        <li><a href="#">Peter Doe </a>on <a href="#">Photography</a></li>
+                        <li><a href="#">Steve Roberts  </a>on <a href="#">HTML5/CSS3</a></li>
+                    </ul>
                 </div>
                 <div class="clearfix"></div>
+                <div class="archives">
+                    <h3>Arşivler</h3>
+                    <ul>
+                        <li><a href="#">Ekim 2024</a></li>
+                        <li><a href="#">Kasım 2024</a></li>
+                    </ul>
+                </div>
                 <div class="categories">
                     <h3>Kategoriler</h3>
                     <ul>
                         <asp:Repeater ID="Repeater2" runat="server">
                             <ItemTemplate>
-                                <li><a href="KategoriDetay.Aspx?KATEGORIID=<%# Eval("KATEGORIID") %>"><%# Eval("KATEGORIAD") %></a></li>
+                                <li><a href="KategoriDetay.Aspx?KATEGORIID"=<%# Eval("KATEGORIID") %>"><%# Eval("KATEGORIAD") %></a></li>
                             </ItemTemplate>
                         </asp:Repeater>
                     </ul>
@@ -56,4 +61,5 @@
             <div class="clearfix"></div>
         </div>
     </div>
+
 </asp:Content>
