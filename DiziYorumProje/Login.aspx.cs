@@ -25,6 +25,7 @@ namespace DiziYorumProje
 
             if (sorgu.Any())
             {
+                Session.Add("KULLANICI", TextBox1.Text);
                 Response.Redirect("/AdminSayfalar/Bloglar.Aspx");
             }
             else
